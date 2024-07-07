@@ -1,0 +1,36 @@
+.ctnr:has(.row) {
+    display: flex !important;
+    flex-direction: column;
+    gap: 0;
+}
+
+.ctnr:has(.row.fl),
+.row:has(.col.fl) {
+    flex-wrap: wrap;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+}
+
+.row, .row.sm, .col, .col.sm {
+    flex: 1;
+}
+
+.row.md, .col.md {
+    flex: 2;
+}
+
+.row.lg, .col.lg {
+    flex: 3;
+}
+
+.col.fl ~ .col {
+    --hi: 0;
+}
+
+.col.fl {
+    min-width: 100%;
+}

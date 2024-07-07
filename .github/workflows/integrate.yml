@@ -1,0 +1,35 @@
+name: Integrate
+
+on:
+  push:
+    branches: [ 'main' ]
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 22.x ]
+
+    steps:
+      - name: 🔍 Checkout Source
+        uses: actions/checkout@v4
+
+      - name: Setup for Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
+
+      - name: 🔧 Build Docker Images
+        run: docker compose -f docker-compose.yml build
+
+      - name: 🔄 Run Backend Tests
+        run: docker-compose run backend npm test
+
+      - name: 🔄 Run Frontend Tests
+        run: docker-compose run frontend npm test
+
+      - name: 🔄 Run SQL Tests
+        run: docker-compose run sql npm test

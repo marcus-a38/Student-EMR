@@ -1,0 +1,80 @@
+.inputText {
+
+  color: #424242;
+  font-size: 1.025rem;
+  text-indent: 4px;
+  height: 2rem;
+  line-height: 0.5rem;
+  width: 100%;
+  border-width: 1px;
+  border-color: #3d3d3d;
+  border-style: solid;
+}
+
+.inputSelect, .inputText {
+  border-radius: 5px;
+}
+
+.inputSelect {
+  font: inherit;
+  height: 2rem;
+  margin: auto 1%;
+}
+
+.inputGroup, #passwordGroup {
+  position: relative;
+  margin: 1% auto;
+  display: block;
+  padding: 0.5rem;
+  max-width: 67.5%;
+  max-height: 2rem;
+}
+
+.inputGroup.igMd {
+  max-width: 30%;
+}
+
+.inputGroup.igSm {
+  max-width: 15%;
+}
+
+.inputGroup.igInl {
+  display: inline-block;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.SubmitButton {
+  font-size: 1rem;
+  margin: 4px;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  width: 50%;
+  height: 3rem;
+  line-height: 0;
+  border: none;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 1px solid #5f5f5f;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.SubmitButton:hover {
+  background-color:#00563F;
+  color: white;
+}
+
+.fieldSecret {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  z-index: -1;
+}
+
+.inputGroup.txtCenter > :is(select, input) {
+  text-align: center;
+  tab-size: 0;
+}

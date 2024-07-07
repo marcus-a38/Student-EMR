@@ -1,0 +1,72 @@
+:root, body {
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+}
+
+/* Base class */
+.ctnr {
+    display: block;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+/* Full (100%) width */
+.ctnr.fw {
+    min-width: 100vw;
+    max-width: 100vw;
+    width: 100vw;
+}
+
+/* Fluid width */
+.ctnr.fl {
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
+}
+
+/* Extra small */
+.ctnr.xs {
+    max-width: 20%;
+}
+
+/* Small */
+.ctnr.sm {
+    max-width: 40%;
+}
+
+/* Medium */
+.ctnr.md {
+    max-width: 65%;
+}
+
+/* Large */
+.ctnr.lg {
+    max-width: 77.5%;
+}
+
+/* Extra large */
+.ctnr.xl {
+    max-width: 90%;
+}
+
+/* Vertically fluid */
+.ctnr.vfl {
+    min-height: 100%;
+    min-width: revert;
+    max-width: revert;
+    width: auto;
+}
+
+.main {
+    min-height: 100vh;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+/* Inline container */
+.ctnr.inl {
+    display: inline-block;
+}

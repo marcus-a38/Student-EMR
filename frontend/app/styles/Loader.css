@@ -1,0 +1,46 @@
+.Loader {
+  width: 6rem;
+  height: 6rem;
+  background: white;
+  box-shadow: 0 0 0 3px #00563F33;
+  border-radius: 50%;
+  padding: 1rem;
+  position: fixed;
+  top: calc(37.5% + 2rem);
+  left: 43.25%;
+}
+
+.Loader svg {
+  position: relative;
+  top: 25%;
+}
+
+.Loader svg polyline {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.Loader svg polyline:nth-child(1) {
+  fill: none;
+  stroke: #00563F33;
+}
+
+.Loader svg polyline:nth-child(2) {
+  fill: none;
+  stroke: #00563F;
+  stroke-dasharray: 48, 144;
+  stroke-dashoffset: 192;
+  animation: dash_682 1.4s linear infinite;
+}
+
+@keyframes dash_682 {
+  72.5% {
+    opacity: 0;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}

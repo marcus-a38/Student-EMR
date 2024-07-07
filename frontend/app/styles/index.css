@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat/static/Montserrat-Light.ttf'); 
+}
+
+@font-face {
+  font-family: 'Archivo Black';
+  src: url('fonts/Archivo_Black/ArchivoBlack-Regular.ttf');
+}
+
+
+
+body {
+  margin: 0;
+}
+
+:root, body, #root, .App, .Search {
+  height: 100vh;
+}
+
+body, button {
+  margin: 0;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+input::-webkit-input-placeholder {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+input::-moz-placeholder {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

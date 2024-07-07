@@ -1,0 +1,118 @@
+:root {
+  --loginBrdrGradX: 100%;
+  --loginBrdrGradY: 50%;
+  --loginBrdrPrimary: rgba(0, 86, 63, 1);
+  --loginBrdrSecondary: rgba(0, 86, 63, 1);
+  --loginBrdrGradAng: 90deg;
+}
+
+.Login {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+}
+
+#loginLeft, #loginRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#loginLeft {
+  max-width: calc(calc(2/5)*100%);
+  background-color: #00563F;
+  flex-grow: 2;
+}
+
+#loginRight {
+  align-items: center;
+  text-align: center;
+  flex-grow: 3;
+}
+
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: white;
+  height: min(75%, 26rem);
+  width: 50%;
+  border: 1px solid #1b6652;
+  padding: 2rem;
+  border-radius: 2%;
+  transition: background-color 1s ease;
+}
+
+/* Bold the border of the form when hovering or */
+#loginForm:is(:hover, :has(*:focus)) {
+  background-color: rgba(0, 86, 63, 0.05);
+}
+
+#loginBlob {
+  height: 75%;
+  width: auto;
+  top: 12.5%;
+  position: relative;
+  z-index: 0;
+}
+
+#showPasswordToggler {
+  opacity: 100%;
+  position: relative;
+  padding: 0.25rem;
+  right: calc(-50% + 0.75rem);
+  bottom: 2.125rem;
+  display: inline;
+  cursor: pointer;
+  margin: 0;
+  max-width: 1.5rem;
+  height: auto;
+  background: white;
+}
+
+
+#fsuLogo {
+  width: 75%; 
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes loginBrdrTransition {
+  20% {
+		--loginBrdrGradX: 100%;
+		--loginBrdrGradY: 50%;
+	}
+	40% {
+		--loginBrdrGradX: 100%;
+		--loginBrdrGradY: 100%;
+	}
+	60% {
+		--loginBrdrGradX: 50%;
+		--loginBrdrGradY: 100%;
+	}
+	80% {
+		--loginBrdrGradX: 0%;
+		--loginBrdrGradY: 50%;
+	}
+	100% {
+		--loginBrdrGradX: 50%;
+		--loginBrdrGradY: 0%;
+	}
+}
+
+@keyframes borderRotate {
+	100% {
+		--loginBrdrGradAng: 420deg;
+	}
+}
+
+/*
+
+border-image: radial-gradient(
+    ellipse at var(--loginBrdrGradX) var(--loginBrdrGradY), 
+    var(--loginBrdrSecondary), var(--loginBrdrSecondary) 10%, var(--loginBrdrPrimary) 40%
+  ) 50;
+
+  */

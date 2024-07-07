@@ -1,0 +1,177 @@
+table.Table {
+    background-color: #ffffff;
+    border-collapse: collapse;
+    border-color: #000000;
+    box-shadow: 0 0 3px;
+}
+
+table.Table.scroll-y tbody {
+    display: block;
+    max-height: 8.5rem;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+table.Table.scroll-x 
+ {
+    display: block;
+    max-width: 20rem;
+    overflow-x: scroll;
+    height: 100%;
+}
+
+table.Table.scroll-y thead {
+    display: table;
+    position: sticky;
+    border: none;
+    box-shadow: inset 0 -1px 0 black;
+    top: 0;
+    z-index: 1;
+}
+
+table.Table.scroll-x tr > th:first-of-type {
+    padding: 0.65rem 1rem;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    border-right: none;
+    box-shadow: inset -1px 0 0 black;
+    background-color: #ffffff;
+}
+
+table.Table.scroll-x tr > td:first-of-type {
+    border-left: none;
+}
+
+table.Table.scroll-y thead tr::after {
+    content: "";
+    width: 17px;
+    display: table-cell;
+}
+
+table.Table.scroll-y thead :is(td, th) {
+    padding: 1rem;
+}
+
+table.Table.capt-btm {
+    caption-side: bottom;
+}
+
+table.Table > thead {
+    border-bottom: 1px solid;
+}
+
+/* Default table cell padding */
+table.Table td {
+    padding: 0.65rem 1rem;
+}
+
+table.Table thead > th {
+    padding-top: 0.65rem;
+    padding-bottom: 0.65rem;
+}
+
+/* Small table header and general cells */
+table.Table.sm :is(td, th) {
+    padding: 0.15rem;
+}
+
+/* Medium table general cells */
+table.Table.md td {
+    padding: 0.5rem;
+}
+
+/* Medium table header cells */
+table.Table.md th {
+    padding: 0.5rem auto;
+}
+
+/* Large table general cells */
+table.Table.lg td {
+    padding: 1.5rem;
+}
+
+/* Large table header cell */
+table.Table.lg th {
+    padding: 1.5rem auto;
+}
+
+/* Even-rowed zebra style */
+table.Table.zeb-even tbody > tr:nth-child(even),
+table.Table:is(.zeb, .zeb-odd) tbody > tr:nth-child(odd),
+table.Table.zeb-col tbody > tr > td:nth-child(even) {
+    backdrop-filter: brightness(85%);
+}
+
+/* Emphasized header */
+table.Table.bold-th {
+
+}
+
+/* Table outline, header divider, and cell borders */
+table.Table.outl,
+table.Table.outl-all :is(th, td) {
+    border: 1px solid black;
+}
+
+/* Row borders */
+table.Table.outl-row tbody tr + tr {
+    border-top: 1px solid black;
+}
+
+/* Column borders */
+table.Table.outl-col :is(tbody, thead) :is(td + td, th + th) {
+   border-left: 1px solid black;
+}
+
+table.Table.outl-fscol tr :is(td, th):nth-child(1) {
+    background: inherit;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    border-right: 1px solid black;
+}
+
+/* Hover */
+table.Table > :is(th.hov, tr > td.hov, tr.hov):hover,
+table.Table.hov tbody > tr:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0 0);
+}
+
+/* Dark options */
+table.Table.drk {
+    border-color:#9e9e9e;
+    background-color: #010105;
+    color: #9e9e9e;
+}
+
+/* Dark zebra style */
+table.Table.drk.zeb-even tbody > tr:nth-child(even),
+table.Table.drk:is(.zeb, .zeb-odd) tbody > tr:nth-child(odd),
+table.Table.drk.zeb-col tbody > tr > td:nth-child(even) {
+    background-color: #181818;
+}
+
+/* Dark emphasized header */
+table.Table.bold-th {
+    background-color: #252525;
+    color: #bbbbbb;
+}
+
+/* Dark hover */
+table.Table.drk > :is(th.hov, tr > td.hov, tr.hov):hover,
+table.Table.drk.hov tbody > tr:hover {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2) 0 0);
+}
+
+table.Table td:has(input) {
+    padding: 0;
+}
+
+table.Table td > input {
+    font-family: Helvetica, sans-serif, Arial;
+    text-align: center;
+    font-size: 1.075rem;
+    height: 2.6rem;
+    width: 95%;
+    border: none;
+}
