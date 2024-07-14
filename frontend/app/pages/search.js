@@ -3,7 +3,6 @@ import { FormGroup } from "../components/Context";
 import '../styles/forms.css';
 import '../styles/Search.css';
 import { currentDate } from '../utils/date-utils';
-import SSNInput from '../components/search/SSNInput';
 
 async function authorize() {
 
@@ -28,7 +27,7 @@ export default function Search() {
   return (
     <div className='Search' data-testid='searchPage'>
       <div className='searchTitle'>
-        <p className='h1 whiteText'><b>Patient Lookup</b></p>
+        <p className='h1'><b>Patient Lookup</b></p>
       </div>
       <div className='searchInner'>
         <div className='searchMRN'>
@@ -41,8 +40,7 @@ export default function Search() {
                   placeholder='e.g. 00112233' 
                   className='inputText'
                   maxLength='8'
-                  required={true}
-                />
+                  required={true} />
               </div>
             </form>
           </FormGroup>
@@ -53,43 +51,42 @@ export default function Search() {
             <p className='h1'>Search by Details</p>
             <form onSubmit={(e) => findRecord(e.target) }>
               <div className='inputGroup igMd igInl txtCenter'>
+                <label for="first">First name</label>
                 <input 
+                  name="first"
                   type='text'
-                  placeholder="First name" 
+                  placeholder="First name..." 
                   minLength='3'
                   maxLength='48'
-                  className='inputText'
-                />
+                  className='inputText' />
               </div>
               <div className='inputGroup igMd igInl txtCenter'>
+                <label for="last">Last name</label>
                 <input 
+                  name="last"
                   type='text'
-                  placeholder="Last name"  
+                  placeholder="Last name..."  
                   minLength='3'
                   maxLength='48'
-                  className='inputText'
-                />
+                  className='inputText' />
               </div>
               <div className='inputGroup igMd igInl txtCenter'>
-                <SSNInput />
+                <label for="gender">Gender</label>
+                <select name="gender" defaultValue='' className='inputSelect txtCenter'>
+                  <option value='0' disabled readOnly>Gender</option>
+                  <option value='1'>Male</option>
+                  <option value='2'>Female</option>
+                  <option value='3'>Neither</option>
+                </select>
               </div>
-              <div>
-                <div className='inputGroup igMd igInl txtCenter'>
-                  <select name="gender" defaultValue='' className='inputSelect txtCenter'>
-                    <option value='0' disabled readOnly>Gender</option>
-                    <option value='1'>Male</option>
-                    <option value='2'>Female</option>
-                    <option value='3'>Neither</option>
-                  </select>
-                </div>
-                <div className='inputGroup igMd igInl txtCenter'>
-                  <input 
-                    type="date" 
-                    min='1907-01-01'
-                    max={currentDate()}
-                    className='inputText' 
-                  />
-                </div>
+              <div className='inputGroup igMd igInl txtCenter'>
+              <label for="birthdate">D.O.B.</label>
+                <input 
+                  name="birthdate"
+                  type="date" 
+                  min='1907-01-01'
+                  max={currentDate()}
+                  className='inputText' />
               </div>
             </form> 
           </FormGroup>

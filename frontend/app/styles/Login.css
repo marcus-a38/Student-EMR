@@ -7,28 +7,13 @@
 }
 
 .Login {
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-  width: 100vw;
-}
-
-#loginLeft, #loginRight {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-#loginLeft {
-  max-width: calc(calc(2/5)*100%);
-  background-color: #00563F;
-  flex-grow: 2;
-}
-
-#loginRight {
   align-items: center;
   text-align: center;
-  flex-grow: 3;
 }
 
 #loginForm {
@@ -69,14 +54,6 @@
   max-width: 1.5rem;
   height: auto;
   background: white;
-}
-
-
-#fsuLogo {
-  width: 75%; 
-  height: auto;
-  margin: 0;
-  padding: 0;
 }
 
 @keyframes loginBrdrTransition {
