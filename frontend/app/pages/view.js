@@ -36,8 +36,7 @@ export default function View({ json }) {
         className={classMerger('ViewTabButton', type, active === type && 'active')}
         onClick={() => setActive(type)}
         onMouseEnter={()=> {setIsHovering(true)}}
-        onMouseLeave={()=>{setIsHovering(false)}}
-      >
+        onMouseLeave={()=>{setIsHovering(false)}}>
         <Link to={`/${active}`}>
           <div className='viewTabButtonPoly'>
             <svg 
@@ -46,11 +45,15 @@ export default function View({ json }) {
               height="100%" 
               viewBox="0 0 100 100" 
               xmlns="http://www.w3.org/2000/svg" 
-              preserveAspectRatio="none"
-            >
+              preserveAspectRatio="none">
               <defs>
-                <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
-                  <feDropShadow dx="2" dy="2" stdDeviation="3" floodColor="black" floodOpacity="0.5"/>
+                <filter 
+                  id="dropShadow" 
+                  x="-10%" 
+                  y="-10%" 
+                  width="120%" 
+                  height="120%">
+                  <feDropShadow dx="2" dy="2" stdDeviation="3" floodColor="black" floodOpacity="0.5" />
                 </filter>
               </defs>
               <polygon points="15,0 85,0 100,100 0,100"/>

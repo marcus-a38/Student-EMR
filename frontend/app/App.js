@@ -27,6 +27,7 @@ export default function App() {
 
 function AppInner() {
 
+  const [bannerExpanded, setBannerExpanded] = useState(true);
   const {location, authentication} = useLocation();
 
   const [auth, setAuth] = useState(
@@ -43,6 +44,32 @@ function AppInner() {
   return (
     <Suspense fallback={<Loader />}>
       <div className="App" data-testid="App">
+        {bannerExpanded && ( 
+          <div id='app-banner' data-testid='Banner'>
+            <div>
+              <a 
+                href='https://fitchburgstate.edu'
+                target='_blank' 
+                rel='noreferrer noopener'>
+                <img 
+                  src='FSU_white_stacked.png' 
+                  width='0'
+                  alt='FSU Logo' 
+                  id='fsuLogo' />
+              </a>
+              <p className='whiteText'>
+                Nursing&nbsp;Department Student&nbsp;EMR
+              </p>
+            </div>
+          </div> 
+        )}
+      <button 
+        type='button' 
+        onClick={() => {setBannerExpanded(!bannerExpanded)}}
+        aria-label='Toggle Banner' >
+        {bannerExpanded ? '<' : '>'}
+      </button>
+      <div id="app-content" data-testid='AppContent'>
         <Routes>
           <Route path='/login' element={<Login />} />
           <Route path='/search' element={!auth ? 
@@ -57,6 +84,7 @@ function AppInner() {
           } />
         </Routes>
       </div>
+    </div>
     </Suspense>
   );
 }

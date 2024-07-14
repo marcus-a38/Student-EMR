@@ -2,33 +2,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color:#1b6652;
-}
-
-.searchTitle {
-  flex-grow: 1;
 }
 
 .searchInner {
   display: flex;
-  flex-direction: column;
-  flex-grow: 4;
-  width: 75%;
+  flex-direction: row;
+  width: 50%;
 }
 
 .searchMRN, .searchDetails {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: white;
   border-radius: 1rem;
-  flex-grow: 1;
   border: 1px solid #1b6652;
   border-radius: 2%;
-}
-
-.searchSpacer {
-  flex-grow: 1;
 }
 
 .searchInner > hr {

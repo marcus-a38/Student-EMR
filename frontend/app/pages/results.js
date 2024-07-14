@@ -30,7 +30,7 @@ export default function Results({ json }) {
       <div className='resultsContainer'>
         {(
           json.map((res, index) => {
-            <Result key={index} json={res}/>
+            <Result key={index} json={res} />
           })
         )}
       </div>
